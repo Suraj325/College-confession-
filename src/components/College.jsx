@@ -4,7 +4,7 @@ const College = () => {
   return (
     <>
       <Header />
-      <div>Hello I am College page</div>
+      <div>Hello!! This is College Page</div>
     </>
   );
 };
