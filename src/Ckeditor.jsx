@@ -15,8 +15,16 @@ export class Ckeditor extends Component {
           <div className="mt-1"></div>
           <CKEditor
             editor={ClassicEditor}
-            data="<p>Hello from CKEditor 5!</p>"
-            onReady={(editor) => {}}
+            data="<p>Start writing . . .</p>"
+            onReady={(editor) => {
+              editor.editing.view.change((writer) => {
+                writer.setStyle(
+                  "height",
+                  "250px",
+                  editor.editing.view.document.getRoot()
+                );
+              });
+            }}
             onChange={(event, editor) => {
               const data = editor.getData();
             }}

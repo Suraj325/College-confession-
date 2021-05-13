@@ -53,6 +53,7 @@ body {
   background-color: #6c069c;
   border: 1px solid white;
   font-weight: 500;
+  margin-left: 10px; /*remove if you're using header */
 }
 #search:hover {
   color: rgb(169, 71, 207);
@@ -61,10 +62,15 @@ body {
 #sinput:active {
   border: 1px solid white;
 }
-/* #searchform {
+/* if I am using header comment searchform */
+#searchform {
+  margin-left: 10px;
   width: fit-content;
   margin-right: 10px;
-} */
+  margin-bottom: 1px;
+}
+#hstyle {
+}
 /* #menu {
   color: white;
   margin-left: 10px;
@@ -92,6 +98,16 @@ body {
   background-color: white;
   color: #63078f;
 }
+#showmore {
+  background-color: #63078f;
+  border: 1px solid white;
+  color: white;
+}
+#showmore:hover {
+  background-color: white;
+  color: #63078f;
+}
+
 #cardfooter {
   display: inline-block;
   text-align: right;
@@ -164,3 +180,67 @@ body {
 #publish_right {
   margin-left: 160%;
 } */
+/* If i am using header comment nav_bar and nav_brand */
+#nav_bar {
+  margin-left: 10px;
+}
+#nav_brand {
+  margin-left: 9px;
+  margin-bottom: 5px;
+}
+/* .navbar-custom {
+  background-color: red;
+} */
+#menu_bar {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+#hstyle {
+  margin-left: 50%;
+}
+@media only screen and (max-width: 400px) {
+  #hstyle {
+    margin-left: 0%;
+  }
+  #write_anonymous h3 {
+    font-size: 15px;
+  }
+  #cardpara {
+    font-size: 11px;
+  }
+  #cardtitle {
+    font-size: 13px;
+  }
+
+  #footerbtn svg {
+    width: 15px;
+    height: 15px;
+  }
+  #cardfooter {
+    margin: 0%;
+  }
+
+  #bkbutton svg {
+    width: 12px;
+    height: 12px;
+  }
+  #showmore {
+    font-size: 10px;
+    height: 23px;
+    width: 50px;
+    padding: 1px 2px;
+  }
+  .card-header {
+    padding: 2px 4px;
+  }
+  #footerbtn {
+    padding: 0px 6px;
+  }
+  #recent_post {
+    font-size: 14px;
+  }
+  #menu_bar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}

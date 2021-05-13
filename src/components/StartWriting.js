@@ -1,10 +1,12 @@
 import React from "react";
 import Ckeditor from "../Ckeditor";
 import Header from "../Header";
+import Menu from './Menu';
 const StartWriting = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Menu />
       <br />
       <hr />
       {/* <div className="container">

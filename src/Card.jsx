@@ -7,10 +7,12 @@ const Card = () => {
         <div className="card">
           <div className="card-body" id="card-style">
             <div id="title_bookmark">
-              <h5 className="card-title">Title</h5>
+              <h5 className="card-title" id="cardtitle">
+                Title
+              </h5>
             </div>
 
-            <p className="card-text">
+            <p id="cardpara" className="card-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
               necessitatibus praesentium corporis ipsam inventore ratione,
               mollitia ullam possimus totam, ex porro accusantium numquam qui
@@ -19,14 +21,14 @@ const Card = () => {
             {/* <a href="#" className="btn btn-primary" id="showmore">
               Show more
             </a> */}
-            <button className="btn" id="searchbutton" type="submit">
-              Show more
+            <button className="btn" id="showmore" type="submit">
+              more
             </button>
           </div>
           <div className="card-header">
             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
               <div id="cardfooter">
-                <button type="button" className="btn btn-light">
+                <button type="button" id="footerbtn" className="btn btn-light">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
@@ -39,7 +41,7 @@ const Card = () => {
                   </svg>
                 </button>
 
-                <button type="button" className="btn btn-light">
+                <button type="button" id="footerbtn" className="btn btn-light">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"

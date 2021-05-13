@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "../Header";
+import Menu from "./Menu";
 const College = () => {
   return (
     <>
-      <Header />
-      <div>Hello!! This is College Page</div>
+      <Menu />
+      <div>Hello!! This is college page</div>
     </>
   );
 };

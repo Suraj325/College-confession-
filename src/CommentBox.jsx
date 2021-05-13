@@ -10,6 +10,7 @@ const CommentBox = () => {
     <>
       <div id="cardfooter">
         <Button
+          id="footerbtn"
           className="btn btn-light"
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"

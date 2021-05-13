@@ -3,35 +3,53 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
+
 import Form from "react-bootstrap/Form";
 
 const Menu = () => {
   return (
     <>
-      <Navbar bg="light" expand="md">
-        <Navbar.Brand href="#">Confession</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className="mr-auto my-2 my-md-0" style={{ paddingLeft: "10px" }}>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#college">College</Nav.Link>
+      <div>
+        <Navbar
+          id="menu_bar"
+          className="navbar sticky-top navbar-expand-lg navbar-dark nav fixed-top "
+          style={{ backgroundColor: "#6803A1" }}
+          expand="md"
+        >
+          <Navbar.Brand href="#" id="nav_brand">
+            Confession
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="mr-auto my-2 my-md-0"
+              id="nav_bar"
+              style={{ fontFamily: "Roboto Slab" }}
+            >
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/college">College</Nav.Link>
 
-            {/* <Nav.Link href="#" disabled>
+              {/* <Nav.Link href="#" disabled>
                 Link
               </Nav.Link> */}
-            <Nav.Link href="#startwriting">StartWriting</Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="mr-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
+              <Nav.Link href="/startwriting">StartWriting</Nav.Link>
+            </Nav>
+            <div id="hstyle">
+              <Form className="d-flex " id="searchform">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="mr-2"
+                  aria-label="Search"
+                />
+                <Button id="search" variant="outline-success">
+                  Search
+                </Button>
+              </Form>
+            </div>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
     </>
   );
 };

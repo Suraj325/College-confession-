@@ -3,19 +3,20 @@ import React from "react";
 import Slide from "../Slide";
 import Card from "../Card";
 import Menu from "./Menu";
+import Header from "../Header";
 const Home = () => {
   return (
     <>
       {/* <Header /> */}
-      <main>
-        <Menu />
-      </main>
+      <Menu />
 
       <br />
       <Slide />
       <hr />
       <div className="container">
-        <h5 className="text-capitalize ">Recent Posts</h5>
+        <h5 className="text-capitalize " id="recent_post">
+          Recent Posts
+        </h5>
       </div>
       <Card />
       <br />
