@@ -27,12 +27,7 @@ body {
   padding-right: 515px;
   margin-top: 5px;
 }
-#writehere {
-}
-/* #write:hover {
-  background-color: rgb(169, 71, 207);
-  transition-duration: 0.4s;
-} */
+
 #writehere:hover {
   background-color: #63078f;
   color: white;
@@ -69,13 +64,9 @@ body {
   margin-right: 10px;
   margin-bottom: 1px;
 }
-#hstyle {
+#slideimage {
+  height: 270px;
 }
-/* #menu {
-  color: white;
-  margin-left: 10px;
-  margin-right: 10px;
-} */
 .carousel-inner {
   width: 100%;
   height: 70%;
@@ -242,5 +233,8 @@ body {
   #menu_bar {
     padding-top: 2px;
     padding-bottom: 2px;
+  }
+  #slideimage {
+    height: 200px;
   }
 }
