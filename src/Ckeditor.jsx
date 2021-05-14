@@ -26,7 +26,7 @@ export class Ckeditor extends Component {
               });
             }}
             onChange={(event, editor) => {
-              const data = editor.getData();
+              // const data = editor.getData();
             }}
             onBlur={(event, editor) => {}}
             onFocus={(event, editor) => {}}

@@ -1,7 +1,6 @@
 import React from "react";
 import Ckeditor from "../Ckeditor";
-import Header from "../Header";
-import Menu from './Menu';
+import Menu from "./Menu";
 const StartWriting = () => {
   return (
     <>
