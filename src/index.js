@@ -1,4 +1,5 @@
 import React from "react";
+import "semantic-ui-css/semantic.min.css";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";

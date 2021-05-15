@@ -1,5 +1,5 @@
 import React from "react";
-import CommentBox from "./CommentBox";
+import Comment from "./Comment";
 const Card = () => {
   return (
     <>
@@ -26,7 +26,9 @@ const Card = () => {
             </button>
           </div>
           <div className="card-header">
-            <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div
+            // className="d-grid gap-2 d-md-flex justify-content-md-end"
+            >
               <div id="cardfooter">
                 <button type="button" id="footerbtn" className="btn btn-light">
                   <svg
@@ -53,21 +55,8 @@ const Card = () => {
                     <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
                   </svg>
                 </button>
-                {/* <button type="button" className="btn btn-light"> */}
-                {/* <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="25"
-                    fill="currentColor"
-                    class="bi bi-chat-right-text"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
-                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
-                  </svg> */}
-                <CommentBox />
-                {/* </button> */}
               </div>
+              <Comment />
             </div>
           </div>
         </div>

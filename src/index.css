@@ -102,29 +102,26 @@ body {
 #cardfooter {
   display: inline-block;
   text-align: right;
+  /* background-color: brown; */
 }
-/* #example-collapse-text {
-
-} */
-
-/* .main {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+#cardlikeshare button {
+  display: inline-block;
   align-items: flex-start;
-
-  width: 100%;
-} */
+  background-color: chartreuse;
+}
+#footerbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
 #comment_input {
   display: flex;
   text-align: left;
 }
-/* .menu_active {
-  color: red;
+#commentinput {
+  background-color: darkblue;
+  margin-right: 100px;
 }
-.nav-link {
-  color: #fff;
-} */
 #menu:hover {
   color: white;
 }
@@ -165,6 +162,7 @@ body {
   padding: 8px 10px;
   border-radius: 5px;
 }
+
 /* #publish_left {
   margin-right: 62%;
 }
@@ -189,9 +187,16 @@ body {
 #hstyle {
   margin-left: 50%;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   #hstyle {
     margin-left: 0%;
+  }
+  /* #savepost {
+    margin: 0px;
+    padding-left: 1px;
+  } */
+  #commenttext {
+    font-size: 11px;
   }
   #write_anonymous h3 {
     font-size: 15px;
