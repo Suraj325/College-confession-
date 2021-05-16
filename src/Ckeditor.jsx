@@ -15,7 +15,8 @@ export class Ckeditor extends Component {
           <div className="mt-1"></div>
           <CKEditor
             editor={ClassicEditor}
-            data="<p>Start writing . . .</p>"
+            placeholder="Start writing ..."
+            data="  "
             onReady={(editor) => {
               editor.editing.view.change((writer) => {
                 writer.setStyle(
@@ -31,27 +32,7 @@ export class Ckeditor extends Component {
             onBlur={(event, editor) => {}}
             onFocus={(event, editor) => {}}
           />
-          {/* <div className="d-flex justify-content-center" id="publish_tag">
-            <div class="d-flex  mt-1" id="publish">
-              <button
-                className="btn btn-outline-success"
-                id="search"
-                type="submit"
-              >
-                Publish
-              </button>
 
-              <div class="d-flex justify-content-end" id="publish">
-                <button
-                  className="btn btn-outline-success"
-                  id="search"
-                  type="submit"
-                >
-                  Publish
-                </button>
-              </div>
-            </div>
-          </div> */}
           <div class="d-flex justify-content-end mt-1" id="publish">
             <button
               className="btn btn-outline-success"
@@ -66,28 +47,5 @@ export class Ckeditor extends Component {
     );
   }
 }
-
-// const Ckeditor = () => {
-//   return (
-//     <div className="App">
-//       <h2 className="text-center text-capitalize">
-//         Write your confession 100% anonymously
-//       </h2>
-//       <div>
-//         <CKEditor
-//           id="ckeditor_style"
-//           editor={ClassicEditor}
-//           data="<p>Start writing. . . </p>"
-//           onReady={(editor) => {}}
-//           onChange={(event, editor) => {
-//             const data = editor.getData();
-//           }}
-//           onBlur={(event, editor) => {}}
-//           onFocus={(event, editor) => {}}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
 
 export default Ckeditor;
