@@ -1,6 +1,27 @@
 import React from "react";
 import Comment from "./Comment";
+import ScriptTag from "react-script-tag";
 const Card = () => {
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("showmore");
+
+    if (dots.style.display === "none") {
+      return (
+        (dots.style.display = "inline"),
+        (btnText.innerHTML = " more"),
+        (moreText.style.display = "none")
+      );
+    } else {
+      return (
+        (dots.style.display = "none"),
+        (btnText.innerHTML = " less"),
+        (moreText.style.display = "inline")
+      );
+    }
+  }
+
   return (
     <>
       <div className="container" id="savepost">
@@ -12,18 +33,45 @@ const Card = () => {
               </h5>
             </div>
 
-            <p id="cardpara" className="card-text">
+            {/* <p id="cardpara" className="card-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
               necessitatibus praesentium corporis ipsam inventore ratione,
               mollitia ullam possimus totam, ex porro accusantium numquam qui
               velit, consequatur itaque.
+            </p> */}
+
+            <p id="cardpara" className="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+              <span id="dots">...</span>
+              <span id="more" style={{ display: "none" }}>
+                erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
+                nec congue eget, auctor vitae massa. Fusce luctus vestibulum
+                augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper
+                ipsum dignissim ac. In at libero sed nunc venenatis imperdiet
+                sed ornare turpis. Donec vitae dui eget tellus gravida
+                venenatis. Integer fringilla congue eros non fermentum. Sed
+                dapibus pulvinar nibh tempor porta. erisque enim ligula
+                venenatis dolor. Maecenas nisl est, ultrices nec congue eget,
+                auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+              </span>
             </p>
-            {/* <a href="#" className="btn btn-primary" id="showmore">
-              Show more
-            </a> */}
-            <button className="btn" id="showmore" type="submit">
+
+            {/* <button className="btn" id="showmore" type="submit">
               more
+            </button> */}
+
+            <button
+              className="btn"
+              onClick={myFunction}
+              id="showmore"
+              type="submit"
+            >
+              More
             </button>
+            <ScriptTag />
           </div>
           <div className="card-header">
             <div

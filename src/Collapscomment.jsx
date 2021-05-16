@@ -24,58 +24,65 @@ export default class CommentExampleCollapsed extends Component {
               src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
             />
             <Comment.Content>
-              <Comment.Author as="a">Christian Rocha</Comment.Author>
+              <Comment.Author as="a">Suraj</Comment.Author>
+              <Comment.Metadata>
+                <span>2 days ago</span>
+              </Comment.Metadata>
+              <Comment.Text id="commenttext">Hii Lisa!!</Comment.Text>
+              <Comment.Actions>
+                <a href="/">Reply</a>
+                <a class="like" href="/">
+                  <i class="like icon"></i> 4 Likes
+                </a>
+              </Comment.Actions>
+            </Comment.Content>
+          </Comment>
+        </Comment.Group>
+
+        <Comment.Group collapsed={collapsed}>
+          <Comment>
+            <Comment.Avatar
+              as="a"
+              src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
+            />
+            <Comment.Content>
+              <Comment.Author as="a">Lisa</Comment.Author>
               <Comment.Metadata>
                 <span>2 days ago</span>
               </Comment.Metadata>
               <Comment.Text id="commenttext">
-                I'm very interested in this motherboard. Do you know if it'd
-                work in a Intel LGA775 CPU socket?
+                <b>@Suraj</b> Hello Suraj ❤❤
               </Comment.Text>
               <Comment.Actions>
-                <a>Reply</a>
+                <a href="/">Reply</a>
+                <a class="like" href="/">
+                  <i class="like icon"></i> 4 Likes
+                </a>
               </Comment.Actions>
             </Comment.Content>
-
-            <Comment.Group collapsed={collapsed}>
-              <Comment>
-                <Comment.Avatar
-                  as="a"
-                  src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
-                />
-                <Comment.Content>
-                  <Comment.Author as="a">Elliot Fu</Comment.Author>
-                  <Comment.Metadata>
-                    <span>1 day ago</span>
-                  </Comment.Metadata>
-                  <Comment.Text id="commenttext">No, it wont</Comment.Text>
-                  <Comment.Actions>
-                    <a>Reply</a>
-                  </Comment.Actions>
-                </Comment.Content>
-
-                <Comment.Group>
-                  <Comment>
-                    <Comment.Avatar
-                      as="a"
-                      src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
-                    />
-                    <Comment.Content>
-                      <Comment.Author as="a">Jenny Hess</Comment.Author>
-                      <Comment.Metadata>
-                        <span>20 minutes ago</span>
-                      </Comment.Metadata>
-                      <Comment.Text id="commenttext">
-                        Maybe it would.
-                      </Comment.Text>
-                      <Comment.Actions>
-                        <a>Reply</a>
-                      </Comment.Actions>
-                    </Comment.Content>
-                  </Comment>
-                </Comment.Group>
-              </Comment>
-            </Comment.Group>
+          </Comment>
+        </Comment.Group>
+        <Comment.Group collapsed={collapsed}>
+          <Comment>
+            <Comment.Avatar
+              as="a"
+              src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
+            />
+            <Comment.Content>
+              <Comment.Author as="a">Suresh</Comment.Author>
+              <Comment.Metadata>
+                <span>2 days ago</span>
+              </Comment.Metadata>
+              <Comment.Text id="commenttext">
+                <b>@Suraj @Lisa</b> Pdhai kr lo bsdiwalo😕
+              </Comment.Text>
+              <Comment.Actions>
+                <a href="/">Reply</a>
+                <a class="like" href="/">
+                  <i class="like icon"></i> 4 Likes
+                </a>
+              </Comment.Actions>
+            </Comment.Content>
           </Comment>
         </Comment.Group>
       </div>
