@@ -16,34 +16,6 @@ const StartWriting = () => {
       <div className="container">
         <div>
           <form>
-            {/* <div class="form-group">
-              <div className="card-body " id="card-style">
-                <label for="formGroupExampleInput">
-                  <h5>Title</h5>
-                </label>
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                id="formGroupExampleInput"
-                placeholder="Title"
-              />
-            </div> */}
-            {/* <div class="form-group">
-              <div className="card-body " id="card-style">
-                <label for="exampleFormControlTextarea1">
-                  <h5>Confession</h5>
-                </label>
-              </div>
-
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="4"
-                placeholder="Start writing your confession. . . "
-              ></textarea>
-            </div> */}
-
             <Ckeditor />
           </form>
         </div>

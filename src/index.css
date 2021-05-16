@@ -162,7 +162,13 @@ body {
   padding: 8px 10px;
   border-radius: 5px;
 }
-
+#publish button {
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  height: 40px;
+  width: 90px;
+  padding: 3px 5px;
+}
 /* #publish_left {
   margin-right: 62%;
 }
@@ -187,6 +193,19 @@ body {
 #hstyle {
   margin-left: 50%;
 }
+#addTag {
+  background-color: #63078f;
+  color: white;
+  font-weight: normal;
+  font-family: "Roboto Slab", serif;
+}
+#moreLabel {
+  display: flex;
+}
+#featured {
+  margin-left: 54%;
+}
+
 @media only screen and (max-width: 500px) {
   #hstyle {
     margin-left: 0%;
@@ -215,7 +234,12 @@ body {
   #cardfooter {
     margin: 0%;
   }
-
+  #publish button {
+    font-size: 10px;
+    height: 23px;
+    width: 50px;
+    padding: 1px 2px;
+  }
   #bkbutton svg {
     width: 12px;
     height: 12px;
@@ -241,5 +265,28 @@ body {
   }
   #slideimage {
     height: 200px;
+  }
+  #addTag {
+    height: 23px;
+    width: 65px;
+    font-size: 9px;
+    background-color: #63078f;
+    color: white;
+    font-weight: normal;
+    font-family: "Roboto Slab", serif;
+  }
+
+  #enterTag {
+    margin-left: 6px;
+    height: 23px;
+    width: 125px;
+    font-size: 10px;
+  }
+  #featured {
+    padding: 0px 0px;
+    height: 4px;
+  }
+  #featured a {
+    padding: 6px 12px;
   }
 }

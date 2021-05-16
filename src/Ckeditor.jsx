@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import PublishTag from "./PublishTag";
 
 export class Ckeditor extends Component {
   render() {
@@ -32,16 +33,7 @@ export class Ckeditor extends Component {
             onBlur={(event, editor) => {}}
             onFocus={(event, editor) => {}}
           />
-
-          <div class="d-flex justify-content-end mt-1" id="publish">
-            <button
-              className="btn btn-outline-success"
-              id="search"
-              type="submit"
-            >
-              Publish
-            </button>
-          </div>
+          <PublishTag />
         </div>
       </>
     );

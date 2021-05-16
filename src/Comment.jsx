@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Collapse, FormControl, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import Collapscomment from "./Collapscomment";
-
+import SendIcon from "@material-ui/icons/Send";
 function Comment() {
   const [open, setOpen] = useState(false);
 
@@ -30,19 +30,29 @@ function Comment() {
         <div id="example-collapse-text">
           <InputGroup
             className="mb-3"
-            style={{ border: "1px  solid #63078f ", borderRadius: "5px" }}
+            style={{
+              borderRadius: "5px",
+              paddingTop: "5px",
+            }}
           >
             <FormControl
               placeholder="Write comment . . ."
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              style={{ border: "1px solid #63078f" }}
             />
             <InputGroup.Append>
               <Button
                 id="footerbtn"
-                style={{ borderLeft: "1px  solid #63078f " }}
+                style={{
+                  border: "1px  solid #63078f ",
+                  color: "#63078f",
+                  height: "34px",
+                  width: "40px",
+                }}
               >
-                <svg
+                <SendIcon />
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -51,7 +61,7 @@ function Comment() {
                   viewBox="0 0 16 16"
                 >
                   <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
-                </svg>
+                </svg> */}
               </Button>
             </InputGroup.Append>
           </InputGroup>

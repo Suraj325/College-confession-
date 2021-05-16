@@ -4,7 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import StartWriting from "./components/StartWriting";
-import College from "./components/College";
+import College from "./components/Profile";
 
 const App = () => {
   return (

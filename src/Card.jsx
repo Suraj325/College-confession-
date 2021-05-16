@@ -1,6 +1,5 @@
 import React from "react";
 import Comment from "./Comment";
-import ScriptTag from "react-script-tag";
 const Card = () => {
   function myFunction() {
     var dots = document.getElementById("dots");
@@ -27,18 +26,11 @@ const Card = () => {
       <div className="container" id="savepost">
         <div className="card">
           <div className="card-body" id="card-style">
-            <div id="title_bookmark">
+            {/* <div id="title_bookmark">
               <h5 className="card-title" id="cardtitle">
                 Title
               </h5>
-            </div>
-
-            {/* <p id="cardpara" className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-              necessitatibus praesentium corporis ipsam inventore ratione,
-              mollitia ullam possimus totam, ex porro accusantium numquam qui
-              velit, consequatur itaque.
-            </p> */}
+            </div> */}
 
             <p id="cardpara" className="card-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -58,20 +50,28 @@ const Card = () => {
                 auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
               </span>
             </p>
-
             {/* <button className="btn" id="showmore" type="submit">
               more
             </button> */}
+            <div id="moreLabel">
+              <div>
+                <button className="btn" onClick={myFunction} id="showmore">
+                  more
+                </button>
+              </div>
 
-            <button
-              className="btn"
-              onClick={myFunction}
-              id="showmore"
-              type="submit"
-            >
-              More
-            </button>
-            <ScriptTag />
+              <div id="featured">
+                <a
+                  class="ui tag label"
+                  style={{
+                    color: "#63078f",
+                    textDecoration: "none",
+                  }}
+                >
+                  IIT BHU
+                </a>
+              </div>
+            </div>
           </div>
           <div className="card-header">
             <div
