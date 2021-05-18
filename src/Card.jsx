@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
+import { Image } from "semantic-ui-react";
 const Card = () => {
   function myFunction() {
     var dots = document.getElementById("dots");
@@ -31,6 +32,45 @@ const Card = () => {
                 Title
               </h5>
             </div> */}
+            <div class="timeline-header">
+              {/* <span class="userimage">
+                <img s src="https://picsum.photos/40" alt="" />
+              </span>
+              <span class="username">
+                <a href="#">John Doe</a>
+                <small> </small>
+              </span>
+              <span
+                class="pull-right text-muted"
+                style={{
+                  color: "white",
+                  fontSize: "12px",
+                  paddingLeft: "5px",
+                }}
+              >
+                2 days ago
+              </span> */}
+              <div>
+                <Image
+                  src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                  avatar
+                />
+                <span class="username">
+                  <a href="#">John Doe</a>
+                  <small> </small>
+                </span>
+                <span
+                  class="pull-right "
+                  style={{
+                    color: "rgb(214, 220, 226)",
+                    fontSize: "12px",
+                    paddingLeft: "5px",
+                  }}
+                >
+                  2 days ago
+                </span>
+              </div>
+            </div>
 
             <p id="cardpara" className="card-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -67,6 +107,7 @@ const Card = () => {
                     color: "#63078f",
                     textDecoration: "none",
                   }}
+                  href="/"
                 >
                   IIT BHU
                 </a>

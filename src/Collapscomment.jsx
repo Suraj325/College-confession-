@@ -4,18 +4,15 @@ import { Checkbox, Comment } from "semantic-ui-react";
 export default class CommentExampleCollapsed extends Component {
   state = { collapsed: true };
 
-  handleCheckbox = (e, { checked }) => this.setState({ collapsed: checked });
+  handleCheckbox = (e, { checked }) => this.setState({ collapsed: !checked });
 
   render() {
     const { collapsed } = this.state;
 
     return (
       <div>
-        <Checkbox
-          defaultChecked
-          label="More comments"
-          onChange={this.handleCheckbox}
-        />
+        <h3 class="ui dividing header">Comments</h3>
+        <Checkbox label="More comments" onChange={this.handleCheckbox} />
 
         <Comment.Group>
           <Comment>
@@ -24,7 +21,7 @@ export default class CommentExampleCollapsed extends Component {
               src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
             />
             <Comment.Content>
-              <Comment.Author as="a">Suraj</Comment.Author>
+              <Comment.Author as="a">Suresh</Comment.Author>
               <Comment.Metadata>
                 <span>2 days ago</span>
               </Comment.Metadata>
@@ -51,7 +48,7 @@ export default class CommentExampleCollapsed extends Component {
                 <span>2 days ago</span>
               </Comment.Metadata>
               <Comment.Text id="commenttext">
-                <b>@Suraj</b> Hello Suraj ❤❤
+                <b>@Suresh</b> Hello Suresh ❤❤
               </Comment.Text>
               <Comment.Actions>
                 <a href="/">Reply</a>
@@ -69,12 +66,12 @@ export default class CommentExampleCollapsed extends Component {
               src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
             />
             <Comment.Content>
-              <Comment.Author as="a">Suresh</Comment.Author>
+              <Comment.Author as="a">Suraj</Comment.Author>
               <Comment.Metadata>
                 <span>2 days ago</span>
               </Comment.Metadata>
               <Comment.Text id="commenttext">
-                <b>@Suraj @Lisa</b> Pdhai kr lo bsdiwalo😕
+                <b>@Suresh @Lisa</b> Pdhai kr lo
               </Comment.Text>
               <Comment.Actions>
                 <a href="/">Reply</a>

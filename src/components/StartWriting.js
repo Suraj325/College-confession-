@@ -6,7 +6,6 @@ const StartWriting = () => {
     <>
       {/* <Header /> */}
       <Menu />
-      <br />
       <hr />
       {/* <div className="container">
         <h3 className="text-capitalize text-center">
