@@ -295,4 +295,10 @@ body {
   #featured a {
     padding: 6px 12px;
   }
+  #signup p {
+    font-size: 13px;
+  }
+  #signup a {
+    font-size: 10px;
+  }
 }
