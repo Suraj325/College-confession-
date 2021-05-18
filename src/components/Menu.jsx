@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import { NavLink } from "react-router-dom";
 import Form from "react-bootstrap/Form";
-
 const Menu = () => {
   return (
     <>

@@ -17,12 +17,7 @@ body {
   font-weight: 400;
   font-family: "Roboto Slab", serif;
 }
-/* #write {
-  background-color: whitesmoke;
-  font-size: 26px;
-  font-family: "Roboto Slab", serif;
-  border-radius: 5px;
-} */
+
 #write {
   padding-right: 515px;
   margin-top: 5px;
@@ -48,16 +43,16 @@ body {
   background-color: #6c069c;
   border: 1px solid white;
   font-weight: 500;
-  margin-left: 10px; /*remove if you're using header */
+  margin-left: 10px;
 }
 #search:hover {
   color: rgb(169, 71, 207);
   background-color: white;
+  /* border: 2px solid #63078f; */
 }
 #sinput:active {
   border: 1px solid white;
 }
-/* if I am using header comment searchform */
 #searchform {
   margin-left: 10px;
   width: fit-content;
@@ -102,7 +97,6 @@ body {
 #cardfooter {
   display: inline-block;
   text-align: right;
-  /* background-color: brown; */
 }
 #cardlikeshare button {
   display: inline-block;
@@ -132,10 +126,7 @@ body {
 .App {
   height: 400px;
 }
-/* #ckeditor-style {
-  background-color: brown;
-  height: max-content;
-} */
+
 #title_bookmark {
   display: flex;
 }
@@ -153,10 +144,7 @@ body {
   background-color: rgb(214, 220, 226);
   border: 1px solid rgb(214, 220, 226);
 }
-/* #bookmark {
-  padding: 10;
-  margin-bottom: 1px;
-} */
+
 #write_anonymous {
   background-color: #63078f;
 
@@ -175,13 +163,7 @@ body {
   width: 90px;
   padding: 3px 5px;
 }
-/* #publish_left {
-  margin-right: 62%;
-}
-#publish_right {
-  margin-left: 160%;
-} */
-/* If i am using header comment nav_bar and nav_brand */
+
 #nav_bar {
   margin-left: 10px;
 }
@@ -212,6 +194,23 @@ body {
   margin-left: 54%;
 }
 
+.timeline-header {
+  padding-bottom: 10px;
+  line-height: 30px;
+}
+
+.timeline-header .username {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.timeline-header .username,
+.timeline-header .username a {
+  color: white;
+  text-decoration: none;
+}
+
+/* @media all and (min-width: 300px) */
 @media only screen and (max-width: 500px) {
   #hstyle {
     margin-left: 0%;
@@ -289,11 +288,30 @@ body {
     font-size: 10px;
   }
   #featured {
-    padding: 0px 0px;
-    height: 4px;
+    padding: 1px 0px;
+    height: 8px;
   }
   #featured a {
-    padding: 6px 12px;
+    padding: 7px 15px;
+    font-size: 11px;
+  }
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  #featured {
+    padding: 1px 0px;
+    height: 8px;
+  }
+  #featured a {
+    padding: 2px 15px;
+    font-size: 11px;
   }
   #signup p {
     font-size: 13px;
