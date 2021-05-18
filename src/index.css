@@ -119,6 +119,9 @@ body {
 #menu:hover {
   color: white;
 }
+#avatarprev {
+  display: flex;
+}
 
 .App {
   height: 400px;
@@ -149,6 +152,9 @@ body {
   font-family: "Roboto Slab", serif;
   padding: 8px 10px;
   border-radius: 5px;
+}
+#enterinput label {
+  font-size: 18px;
 }
 #publish button {
   font-size: 18px;
@@ -306,5 +312,11 @@ body {
   #featured a {
     padding: 2px 15px;
     font-size: 11px;
+  }
+  #signup p {
+    font-size: 13px;
+  }
+  #signup a {
+    font-size: 10px;
   }
 }
