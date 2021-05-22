@@ -16,10 +16,6 @@ export default class CommentExampleCollapsed extends Component {
 
         <Comment.Group>
           <Comment>
-            <Comment.Avatar
-              as="a"
-              src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
-            />
             <Comment.Content>
               <Comment.Author as="a">Suresh</Comment.Author>
               <Comment.Metadata>
@@ -38,10 +34,6 @@ export default class CommentExampleCollapsed extends Component {
 
         <Comment.Group collapsed={collapsed}>
           <Comment>
-            <Comment.Avatar
-              as="a"
-              src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
-            />
             <Comment.Content>
               <Comment.Author as="a">Lisa</Comment.Author>
               <Comment.Metadata>
@@ -61,10 +53,6 @@ export default class CommentExampleCollapsed extends Component {
         </Comment.Group>
         <Comment.Group collapsed={collapsed}>
           <Comment>
-            <Comment.Avatar
-              as="a"
-              src="https://react.semantic-ui.com/images/avatar/small/christian.jpg"
-            />
             <Comment.Content>
               <Comment.Author as="a">Suraj</Comment.Author>
               <Comment.Metadata>

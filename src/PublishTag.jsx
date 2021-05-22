@@ -4,7 +4,7 @@ const PublishTag = () => {
   return (
     <>
       <div>
-        <div class="d-flex justify-content-end mt-1" id="publish">
+        <div className="d-flex justify-content-end mt-1" id="publish">
           <AddTag />
           <button className="btn btn-outline-success" id="search" type="submit">
             Publish

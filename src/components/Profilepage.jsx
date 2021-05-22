@@ -1,14 +1,14 @@
 import React from "react";
 
-import { Card, Image, Button } from "semantic-ui-react";
-
+import { Card } from "semantic-ui-react";
+import Mypost from "./Mypost";
 const Profilepage = () => {
   return (
     <>
       <div className="d-flex container justify-content-end">
         <a
           class="btn"
-          href="#"
+          href="/"
           style={{
             color: "#63078f",
             backgroundColor: "white",
@@ -34,7 +34,7 @@ const Profilepage = () => {
 
         <a
           class="btn"
-          href="#"
+          href="/"
           style={{ color: "#63078f", backgroundColor: "white" }}
         >
           <svg
@@ -58,7 +58,11 @@ const Profilepage = () => {
         </a>
       </div>
       <div className="container">
-        <h5>My profile</h5>
+        <div className="container" style={{ marginBottom: "4px" }}>
+          <h3 className="text-capitalize" style={{ fontFamily: "Roboto" }}>
+            My Profile
+          </h3>
+        </div>
         <div
           class="card"
           style={{ backgroundColor: "#63078f", color: "white" }}
@@ -73,7 +77,7 @@ const Profilepage = () => {
                 style={{ border: "0.1px solid white", padding: "4px" }}
               />
               <div class="mt-3">
-                <h4>John Doe</h4>
+                <h4 style={{ fontFamily: "Roboto" }}>John Doe</h4>
                 {/* <p class="text-secondary mb-1">Full Stack Developer</p>
                 <p class="text-muted font-size-sm">
                   Bay Area, San Francisco, CA
@@ -87,6 +91,34 @@ const Profilepage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="container">
+        <div className="container" style={{ marginBottom: "4px" }}>
+          <h3 className="text-capitalize" style={{ fontFamily: "Roboto" }}>
+            My Posts
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col-md" style={{ marginTop: "5px" }}>
+            <Mypost />
+          </div>
+          <div class="col-md" style={{ marginTop: "5px" }}>
+            <Mypost />
+          </div>
+          <div class="col-md" style={{ marginTop: "5px" }}>
+            <Mypost />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md" style={{ marginTop: "5px" }}>
+            <Mypost />
+          </div>
+          <div class="col-md" style={{ marginTop: "5px" }}>
+            <Mypost />
+          </div>
+          <div class="col-md" style={{ marginTop: "5px" }}></div>
         </div>
       </div>
     </>

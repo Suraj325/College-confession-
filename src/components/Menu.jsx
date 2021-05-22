@@ -62,7 +62,7 @@ const Menu = () => {
                 activeClassName="menu_active"
                 className="nav-link"
                 id="nav_bar"
-                to="/college"
+                to="/profile"
               >
                 Profile
               </NavLink>
@@ -90,6 +90,26 @@ const Menu = () => {
                 Search
               </Button>
             </Form>
+          </div>
+          <div>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li className="nav-item">
+                <NavLink
+                  style={{
+                    fontFamily: "Roboto Slab",
+                    fontSize: "16px",
+                    textDecoration: "underline",
+                  }}
+                  exact
+                  className="nav-link"
+                  id="nav_bar"
+                  aria-current="page"
+                  to="/login"
+                >
+                  LogIn
+                </NavLink>
+              </li>
+            </ul>
           </div>
         </Navbar.Collapse>
       </Navbar>
