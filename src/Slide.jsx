@@ -1,5 +1,7 @@
 import React from "react";
-
+import image1 from "./WhatsApp Image 2021-05-23 at 20.45.54.jpeg";
+import image2 from "./WhatsApp Image 2021-05-23 at 20.52.23.jpeg";
+import image3 from "./WhatsApp Image 2021-05-23 at 20.58.51.jpeg";
 const Slide = () => {
   return (
     <>
@@ -35,7 +37,7 @@ const Slide = () => {
             <div className="carousel-item active">
               <img
                 id="slideimage"
-                src="https://source.unsplash.com/random/2000x600"
+                src={image1}
                 className="d-block w-100"
                 alt="..."
               />
@@ -43,7 +45,7 @@ const Slide = () => {
             <div className="carousel-item">
               <img
                 id="slideimage"
-                src="https://source.unsplash.com/random/2000x600"
+                src={image2}
                 className="d-block w-100"
                 alt="..."
               />
@@ -51,7 +53,7 @@ const Slide = () => {
             <div className="carousel-item">
               <img
                 id="slideimage"
-                src="https://source.unsplash.com/random/2000x600"
+                src={image3}
                 className="d-block w-100"
                 alt="..."
               />

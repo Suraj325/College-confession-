@@ -1,18 +1,33 @@
-import React from "react";
-
-import { Card } from "semantic-ui-react";
-import Mypost from "./Mypost";
+import React, { useEffect, useState } from "react";
+import Card from "../Card";
+import { useHistory } from "react-router";
+import axios from "axios";
 const Profilepage = () => {
+  const [Post, setPost] = useState([]);
+  const history = useHistory();
+  const onSubmit = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    history.push("/home");
+  };
+  const auth = localStorage.getItem("_id");
+  const [data, setname] = useState({});
+  useEffect(() => {
+    axios.post("api/user/myprofile", { auth }).then((response) => {
+      setname(response.data.user[0]);
+      setPost(response.data.post);
+    });
+  }, []);
   return (
     <>
-      <div className="d-flex container justify-content-end">
-        <a
-          class="btn"
-          href="/"
+      <div className="d-flex container justify-content-end p-2">
+        <button
+          className="btn "
           style={{
             color: "#63078f",
             backgroundColor: "white",
-            marginRight: "5px",
+            paddingLeft: "10px",
+            border: "1px solid #63078f",
           }}
         >
           <svg
@@ -29,13 +44,18 @@ const Profilepage = () => {
               d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
             />
           </svg>
-          <i class="icon-edit"></i> Edit{" "}
-        </a>
+          <i class="icon-edit"></i> Edit
+        </button>
 
-        <a
-          class="btn"
-          href="/"
-          style={{ color: "#63078f", backgroundColor: "white" }}
+        <button
+          classname="btn"
+          style={{
+            color: "#63078f",
+            backgroundColor: "white",
+            border: "1px solid #63078f",
+            borderRadius: "2px",
+          }}
+          onClick={(e) => onSubmit(e)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +75,7 @@ const Profilepage = () => {
             />
           </svg>
           <i class="icon-edit"></i> Logout
-        </a>
+        </button>
       </div>
       <div className="container">
         <div className="container" style={{ marginBottom: "4px" }}>
@@ -77,50 +97,36 @@ const Profilepage = () => {
                 style={{ border: "0.1px solid white", padding: "4px" }}
               />
               <div class="mt-3">
-                <h4 style={{ fontFamily: "Roboto" }}>John Doe</h4>
+                <h4 style={{ fontFamily: "Roboto" }}>{data.username}</h4>
                 {/* <p class="text-secondary mb-1">Full Stack Developer</p>
                 <p class="text-muted font-size-sm">
                   Bay Area, San Francisco, CA
                 </p> */}
-                <Card
-                  class="text-secondary mb-1"
-                  header="About"
-                  //   meta="About"
-                  description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
-                />
+                {data.text}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div className="container" style={{ marginBottom: "4px" }}>
-          <h3 className="text-capitalize" style={{ fontFamily: "Roboto" }}>
-            My Posts
-          </h3>
-        </div>
-        <div class="row">
-          <div class="col-md" style={{ marginTop: "5px" }}>
-            <Mypost />
-          </div>
-          <div class="col-md" style={{ marginTop: "5px" }}>
-            <Mypost />
-          </div>
-          <div class="col-md" style={{ marginTop: "5px" }}>
-            <Mypost />
-          </div>
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-md" style={{ marginTop: "5px" }}>
-            <Mypost />
-          </div>
-          <div class="col-md" style={{ marginTop: "5px" }}>
-            <Mypost />
-          </div>
-          <div class="col-md" style={{ marginTop: "5px" }}></div>
-        </div>
+      <div className="container" style={{ marginBottom: "4px" }}>
+        <h3 className="text-capitalize" style={{ fontFamily: "Roboto" }}>
+          My Posts
+        </h3>
       </div>
+      <div class="container " style={{ marginTop: "5px" }}>
+        {Post &&
+          Post.map((user) => (
+            <Card
+              text={user.text}
+              tag={user.tag}
+              name={user.username}
+              postId={user._id}
+              vote={user.likes.length}
+            />
+          ))}
+      </div>
+
+      <div class="col-md" style={{ marginTop: "5px" }}></div>
     </>
   );
 };

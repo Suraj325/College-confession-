@@ -3,13 +3,20 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import PublishTag from "./PublishTag";
 import ReactHtmlParser from "react-html-parser";
-
-const Ckeditor = () => {
-  const [value, setValue] = useState("");
+const Ckeditor = (props) => {
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState("");
+  const [errors, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
       <div className="App">
+        <div className="container">
+          {errors && <h4>{errors}</h4>}
+          {loading && <h5>{success}</h5>}
+        </div>
+        <br />
         <div className="container" id="write_anonymous">
           <h3 className="text-center text-capitalize">
             write your confession 100% anonymously
@@ -30,14 +37,20 @@ const Ckeditor = () => {
             });
           }}
           onChange={(event, editor) => {
-            const data = editor.getData();
-            setValue(data);
-            console.log(ReactHtmlParser(value));
+            let data = editor.getData();
+            setMessage(ReactHtmlParser(data));
           }}
           // onBlur={(event, editor) => {}}
           // onFocus={(event, editor) => {}}
         />
-        <PublishTag />
+        <PublishTag
+          text={message}
+          onChange={(value) => {
+            setLoading(value);
+          }}
+          onSet={(value) => setSuccess(value)}
+          onError={(value) => setError(value)}
+        />
       </div>
     </>
   );

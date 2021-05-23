@@ -1,63 +1,167 @@
-import React from "react";
-import { Form } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Divider, Container } from "@material-ui/core";
+import Classnames from "classnames";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import "../App.css";
+import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+
+import Menu from "./Menu";
+import axios from "axios";
+const content = {
+  hidden: {
+    opacity: 0,
+    x: "250vw",
+  },
+  visible: {
+    opacity: 1,
+    x: "0",
+  },
+  transition: {
+    type: "spring",
+    damping: 10,
+    stiffness: 50,
+  },
+};
 const Loginpage = () => {
+  const [loginData, setloginData] = useState({
+    username: "",
+    password: "",
+    errors: {},
+  });
+  const onChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setloginData({ ...loginData, [name]: value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
+    axios(
+      {
+        url: "/api/auth/login",
+        method: "POST",
+        data: {
+          username: loginData.username,
+          password: loginData.password,
+        },
+      },
+      config
+    )
+      .then((response) => {
+        console.log(response);
+        window.localStorage.setItem("authToken", response.data.token);
+        localStorage.setItem("_id", response.data.user._id);
+        alert("Logged In Successfully");
+      })
+      .catch((error) => {
+        const message = error.response.data;
+        setloginData({ ...loginData, errors: message });
+      });
+  };
   return (
-    <div className="container">
-      <br />
-      <h5>Login</h5>
-      <Form>
-        <Form.Group widths="equal" id="enterinput">
-          <Form.Input
-            fluid
-            label="Username"
-            placeholder="Enter your username"
-          />
-
-          <Form.Input
-            fluid
-            label="Password"
-            type="password"
-            placeholder="Enter password"
-          />
-        </Form.Group>
-
-        <Form.Button id="search">Login</Form.Button>
-      </Form>
+    <motion.div variants={content} intial="hidden" animate="visible">
+      <Menu />
       <div
-        id="signup"
-        className="container d-flex justify-content-cente"
-        //   style={{ backgroundColor: "red" }}
+        style={{ color: "#63078f", marginTop: "10vh", width: "100vw" }}
+        className=" container d-felx justify-content-centre  align-items-centre"
       >
-        <p>Don`t have account/Forgot password ?</p>
-        <a
-          href="#"
-          style={{
-            color: "#63078f",
-            marginLeft: "5px",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-box-arrow-in-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-            />
-          </svg>
-          <i class="icon-edit"></i> Create account
-        </a>
+        <div className="app">
+          <div className="i_con">
+            <div className="icon_class">
+              {loginData.errors.error && (
+                <div className="card-title bg-danger p-2 text-centre">
+                  {loginData.errors.error}
+                </div>
+              )}
+
+              <PersonAddIcon fontSize="large" style={{ marginLeft: "40px" }} />
+              <div className="text">Log In</div>
+            </div>
+          </div>
+
+          <div className="row m-2">
+            <form onSubmit={(e) => onSubmit(e)}>
+              <div className="form-group p-1" id="enter">
+                <label>Username</label>
+                <input
+                  type="text"
+                  className={Classnames("form-control", {
+                    "has-error": loginData.errors.username,
+                  })}
+                  id="exampleInputUserName"
+                  name="username"
+                  placeholder="Username"
+                  value={loginData.username || ""}
+                  onChange={(e) => onChange(e)}
+                />
+                {loginData.errors.username && (
+                  <span className="help-box red-text">
+                    {loginData.errors.username}
+                  </span>
+                )}
+              </div>
+
+              <div className="form-group p-1" id="enter">
+                <label>Password</label>
+                <input
+                  type="password"
+                  className={Classnames("form-control ", {
+                    "has-error": loginData.errors.password,
+                  })}
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  name="password"
+                  value={loginData.password || ""}
+                  onChange={(e) => onChange(e)}
+                />
+                {loginData.errors.password && (
+                  <span className="help-box red-text">
+                    {loginData.errors.password}
+                  </span>
+                )}
+              </div>
+
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+                    checkedIcon={<CheckBoxIcon fontSize="small" />}
+                    name="checkedI"
+                  />
+                }
+                label="Remember me"
+              />
+
+              <button
+                type="submit"
+                className="btn btn-primary w-100 mt-3"
+                style={{ backgroundColor: "#63078f" }}
+              >
+                Log In
+              </button>
+            </form>
+          </div>
+          <Divider variant="middle" />
+          <p className="text-center">
+            <Link to="/signup" style={{ color: "#63078f" }}>
+              Don't have an Account
+            </Link>
+          </p>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

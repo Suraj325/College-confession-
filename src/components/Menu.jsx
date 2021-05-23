@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 // import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import { NavLink } from "react-router-dom";
 import Form from "react-bootstrap/Form";
+import { useHistory } from "react-router";
 const Menu = () => {
+  const [college, setCollege] = useState("");
+
+  const history = useHistory();
+  const onSubmit = (e) => {
+    e.preventDefault();
+    history.push({ pathname: "/search", data: { name: college } });
+  };
+
   return (
     <>
       <Navbar
@@ -15,7 +24,7 @@ const Menu = () => {
         expand="md"
       >
         <Navbar.Brand
-          href="#"
+          href="/"
           id="nav_brand"
           style={{
             fontSize: "17px",
@@ -78,18 +87,25 @@ const Menu = () => {
 
             <Nav.Link href="/startwriting">StartWriting</Nav.Link>
           </Nav> */}
-          <div id="hstyle">
-            <Form className="d-flex " id="searchform">
-              <FormControl
+          <div>
+            <form class="d-flex px-1 py-1" onSubmit={(e) => onSubmit(e)}>
+              <input
+                className="form-control me-2"
                 type="search"
                 placeholder="Search"
-                className="mr-2"
                 aria-label="Search"
+                name="MovieName"
+                value={college}
+                onChange={(e) => setCollege(e.target.value)}
               />
-              <Button id="search" variant="outline-success">
+              <button
+                class="btn btn-outline-primary "
+                type="submit"
+                id="search"
+              >
                 Search
-              </Button>
-            </Form>
+              </button>
+            </form>
           </div>
           <div>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
@@ -100,7 +116,6 @@ const Menu = () => {
                     fontSize: "16px",
                     textDecoration: "underline",
                   }}
-                  exact
                   className="nav-link"
                   id="nav_bar"
                   aria-current="page"

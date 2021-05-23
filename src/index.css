@@ -45,35 +45,6 @@ body {
   font-weight: 500;
   margin-left: 10px;
 }
-#login {
-  color: white;
-  background-color: #6c069c;
-  border: 1px solid white;
-  font-weight: 500;
-  margin-left: 40px;
-  padding: 5px 25px;
-}
-#login:hover {
-  color: rgb(169, 71, 207);
-  background-color: white;
-}
-#signup {
-  color: white;
-  background-color: #6c069c;
-  border: 1px solid white;
-  font-weight: 500;
-  margin-left: 40px;
-  padding: 5px 25px;
-}
-#signup:hover {
-  color: rgb(169, 71, 207);
-  background-color: white;
-}
-#enter label {
-  font-size: 18px;
-  font-weight: normal;
-  font-family: "Roboto";
-}
 #search:hover {
   color: rgb(169, 71, 207);
   background-color: white;
@@ -185,6 +156,7 @@ body {
 #enterinput label {
   font-size: 18px;
 }
+
 #publish button {
   font-size: 18px;
   font-family: "Roboto Slab", serif;
@@ -216,6 +188,11 @@ body {
   font-weight: normal;
   font-family: "Roboto Slab", serif;
 }
+#enter label {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "Roboto";
+}
 #moreLabel {
   display: flex;
 }
@@ -237,9 +214,6 @@ body {
 .timeline-header .username a {
   color: white;
   text-decoration: none;
-}
-#mysavepost {
-  padding: 0px;
 }
 
 /* @media all and (min-width: 300px) */
@@ -276,15 +250,6 @@ body {
     height: 23px;
     width: 50px;
     padding: 1px 2px;
-  }
-
-  #login {
-    padding: 2px 10px;
-    margin-left: 16px;
-  }
-  #signup {
-    padding: 2px 10px;
-    margin-left: 10px;
   }
   #bkbutton svg {
     width: 12px;
@@ -345,5 +310,11 @@ body {
   #featured a {
     padding: 2px 15px;
     font-size: 11px;
+  }
+  #signup p {
+    font-size: 13px;
+  }
+  #signup a {
+    font-size: 10px;
   }
 }
