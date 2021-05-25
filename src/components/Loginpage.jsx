@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Divider, Container } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import Classnames from "classnames";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -13,22 +13,19 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 
 import Menu from "./Menu";
 import axios from "axios";
-const content = {
-  hidden: {
+
+const pageVariants = {
+  in: { opacity: 1, x: 0 },
+  out: {
     opacity: 0,
-    x: "250vw",
-  },
-  visible: {
-    opacity: 1,
-    x: "0",
-  },
-  transition: {
-    type: "spring",
-    damping: 10,
-    stiffness: 50,
+
+    y: "100%",
   },
 };
-const Loginpage = () => {
+const PageTransitions = {
+  duration: 0.5,
+};
+const Loginpage = ({ history }) => {
   const [loginData, setloginData] = useState({
     username: "",
     password: "",
@@ -64,6 +61,7 @@ const Loginpage = () => {
         window.localStorage.setItem("authToken", response.data.token);
         localStorage.setItem("_id", response.data.user._id);
         alert("Logged In Successfully");
+        history.push("/");
       })
       .catch((error) => {
         const message = error.response.data;
@@ -71,13 +69,24 @@ const Loginpage = () => {
       });
   };
   return (
-    <motion.div variants={content} intial="hidden" animate="visible">
+    <>
       <Menu />
-      <div
-        style={{ color: "#63078f", marginTop: "10vh", width: "100vw" }}
+
+      <motion.div
+        initial={{ opacity: 0, x: -1000 }}
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={PageTransitions}
+        whileHover={{ scale: 1.05 }}
+        style={{
+          color: "#63078f",
+          marginTop: "10vh",
+          width: "100vw",
+        }}
         className=" container d-felx justify-content-centre  align-items-centre"
       >
-        <div className="app">
+        <div className="app ">
           <div className="i_con">
             <div className="icon_class">
               {loginData.errors.error && (
@@ -160,8 +169,8 @@ const Loginpage = () => {
             </Link>
           </p>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

@@ -1,9 +1,8 @@
-import { Divider, Container } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import React, { useState } from "react";
 import Classnames from "classnames";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Form } from "semantic-ui-react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
@@ -12,21 +11,17 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import axios from "axios";
 import Menu from "./Menu";
 import { motion } from "framer-motion";
-const Signup = () => {
-  const content = {
-    hidden: {
+const Signup = ({ history }) => {
+  const pageVariants = {
+    in: { opacity: 1, x: 0 },
+    out: {
       opacity: 0,
-      x: "250vw",
+
+      y: "100%",
     },
-    visible: {
-      opacity: 1,
-      x: "0",
-    },
-    transition: {
-      type: "spring",
-      damping: 10,
-      stiffness: 50,
-    },
+  };
+  const pageTransitions = {
+    duration: 0.5,
   };
   const [loginData, setloginData] = useState({
     username: "",
@@ -34,6 +29,7 @@ const Signup = () => {
     text: "",
     errors: {},
   });
+
   const onChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -61,6 +57,7 @@ const Signup = () => {
       .then((response) => {
         console.log(response.data);
         alert("Successfully registered");
+        history.push("/login");
       })
       .catch((error) => {
         const message = error.response.data;
@@ -72,9 +69,12 @@ const Signup = () => {
     <>
       <Menu />
       <motion.div
-        variants={content}
-        intial="hidden"
-        animate="visible"
+        initial={{ opacity: 0, x: 1000 }}
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransitions}
+        whileHover={{ scale: 1.05 }}
         style={{ color: "#63078f", marginTop: "10vh" }}
         className=" container w-100  d-felx justify-content-centre  align-items-centre"
       >

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
 import axios from "axios";
+import { motion } from "framer-motion";
+import { duration } from "@material-ui/core";
 const Card = (props) => {
   const { text, tag, name, vote } = props;
   const [likes, setLikes] = useState(vote);
@@ -40,10 +42,32 @@ const Card = (props) => {
       })
       .catch((error) => alert("Please login"));
   };
-
+  const pageVariants = {
+    in: {
+      opacity: 1,
+      x: 0,
+      // scale: 0.9
+    },
+    out: {
+      opacity: 0,
+      y: "100%",
+    },
+  };
+  const pageTransitions = {
+    duration: 0.4,
+  };
   return (
     <>
-      <div className="container" id="savepost">
+      <motion.div
+        initial={{ opacity: 0, x: -1000 }}
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransitions}
+        // whileHover={{ scale: 1.05 }}
+        className="container"
+        id="savepost"
+      >
         <div className="card w-100">
           <div className="card-body" id="card-style">
             {/* <div id="title_bookmark">
@@ -172,7 +196,7 @@ const Card = (props) => {
             <Comment postId={props.postId} />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

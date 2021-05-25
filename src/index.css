@@ -246,9 +246,9 @@ body {
     margin: 0%;
   }
   #publish button {
-    font-size: 10px;
-    height: 23px;
-    width: 50px;
+    font-size: 12px;
+    height: 29px;
+    width: 58px;
     padding: 1px 2px;
   }
   #bkbutton svg {
@@ -278,9 +278,9 @@ body {
     height: 200px;
   }
   #addTag {
-    height: 23px;
-    width: 65px;
-    font-size: 9px;
+    height: 28px;
+    width: 72px;
+    font-size: 10px;
     background-color: #63078f;
     color: white;
     font-weight: normal;
@@ -289,8 +289,8 @@ body {
 
   #enterTag {
     margin-left: 6px;
-    height: 23px;
-    width: 125px;
+    height: 28px;
+    width: 130px;
     font-size: 10px;
   }
   #featured {

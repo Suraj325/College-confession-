@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Collapse, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Collapse } from "react-bootstrap";
 import { useState } from "react";
 import MainComment from "./MainComment";
-import SendIcon from "@material-ui/icons/Send";
+
 import axios from "axios";
 function Comment(props) {
   console.log(props);

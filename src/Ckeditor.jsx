@@ -26,7 +26,7 @@ const Ckeditor = (props) => {
         <CKEditor
           editor={ClassicEditor}
           placeholder="Start writing ..."
-          data="  "
+          data={message}
           onReady={(editor) => {
             editor.editing.view.change((writer) => {
               writer.setStyle(
@@ -36,21 +36,22 @@ const Ckeditor = (props) => {
               );
             });
           }}
-          onChange={(event, editor) => {
+          onChange={(e, editor) => {
             let data = editor.getData();
-            setMessage(ReactHtmlParser(data));
+            setMessage(data);
           }}
-          // onBlur={(event, editor) => {}}
-          // onFocus={(event, editor) => {}}
+          // onBlur={(e, editor) => {}}
+          // onFocus={(e, editor) => {}}
         />
         <PublishTag
-          text={message}
+          text={ReactHtmlParser(message)}
           onChange={(value) => {
             setLoading(value);
           }}
           onSet={(value) => setSuccess(value)}
           onError={(value) => setError(value)}
         />
+        {/* <div>{ReactHtmlParser(message)}</div> */}
       </div>
     </>
   );

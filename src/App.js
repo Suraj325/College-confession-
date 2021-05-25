@@ -8,19 +8,22 @@ import Profile from "./components/Profile";
 import Collegetag from "./components/Collegetag";
 import Login from "./components/Loginpage";
 import SignUp from "./components/SignUp";
+import { AnimatePresence } from "framer-motion";
 const App = () => {
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/startwriting" component={StartWriting} />
-        <Route exact path="/search" component={Collegetag} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
+      <AnimatePresence exitBeforeEnter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/startwriting" component={StartWriting} />
+          <Route exact path="/search" component={Collegetag} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
 
-        <Redirect to="/" />
-      </Switch>
+          <Redirect to="/" />
+        </Switch>
+      </AnimatePresence>
     </>
   );
 };
