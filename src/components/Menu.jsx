@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router";
+
+const toInputUppercase = (e) => {
+  e.target.value = ("" + e.target.value).toUpperCase();
+};
+
 const Menu = () => {
   const [college, setCollege] = useState("");
 
@@ -94,6 +99,7 @@ const Menu = () => {
                 name="MovieName"
                 value={college}
                 onChange={(e) => setCollege(e.target.value)}
+                onInput={toInputUppercase}
               />
               <button
                 class="btn btn-outline-primary "
